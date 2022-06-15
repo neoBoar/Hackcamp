@@ -1,0 +1,51 @@
+
+<?php require('template/header.phtml') ?>
+
+    <h2>Projects</h2>
+    <div>
+
+    </div>
+    <p></p>
+    <div class="row">
+    <div id="containerProject" class="col-xs-12">
+
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <br>
+        </form>
+        <div>
+            <form method="post" action="createWell.php" ><input type="submit" id="createWellButton" value="Create Project" name="createWellButton"> </form>
+        </div>
+
+            <table class="table table-hover">
+                <thead>
+                <tr><th>Service Provider</th><th>Well Name</th><th>Spud Date</th><th>Release date</th><th>Assigned Engineer Name</th><th>Assigned Engineer Email</th><th></tr>
+                <!--  this is all of the title for the auction page  -->
+
+                </thead>
+                <tbody>
+                <!--  this is does a loop getting all auctions  -->
+                <?php foreach ($view->databaseProjectsSet as $databaseProject) {
+                    echo '<td>' . $databaseProject->getServiceProvider() .
+                         '</td> <td>' . $databaseProject->getWellName() .
+                         '</td> <td>' . $databaseProject->getSpudDate() .
+                         '</td> <td>' . $databaseProject->getReleaseDate() .
+                        '</td> <td>' . $databaseProject->getAssignedName() .
+                        '</td> <td>' . $databaseProject->getAssignedEmail() .
+                        '</td> <td>' . '<form method="post" action="stages.php"><input type="submit" value="View" name="viewButton" id="viewButton"><input type="hidden" name="wellName" value="' . $databaseProject->getWellName(). '"><input type="hidden" name="serviceProvider" value="' . $databaseProject->getServiceProvider(). '"><input type="hidden" name="spudDate" value="' . $databaseProject->getSpudDate(). '"><input type="hidden" name="releaseDate" value="' . $databaseProject->getReleaseDate(). '"><input type="hidden" name="kpiCategories" value="' . $databaseProject->getKPI_Categories(). '"><input type="hidden" name="projectID" value="' . $databaseProject->getProjectID(). '"></form>' .
+                        '</td> <td>' . '<form method="post" action="editProject.php"><input type="submit" value="Edit" name="editProjectButton" id="editProjectButton"><input type="hidden" name="projectID" value="' . $databaseProject->getProjectID(). '"></form>' .
+                        '</td> <td>' . '</td></td></tr>';
+                  //  $_SESSION['wellName']=$databaseProject->getWellName();
+                   // $_SESSION['serviceProvider']=$databaseProject->getServiceProvider();
+                   // $_SESSION['spudDate']=$databaseProject->getSpudDate();
+                 //   $_SESSION['releaseDate']=$databaseProject->getReleaseDate();
+                 //   $_SESSION['kpiCategory']=$databaseProject->getKPI_Categories();
+
+                } ?>
+                </tbody>
+            </table>
+
+    </div>
+
+
+
+<?php require('template/footer.phtml') ?>

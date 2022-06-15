@@ -1,0 +1,438 @@
+#title {
+    margin-top: 12px;
+    background-color: #fff;
+    color: #000;
+
+}
+#menu {
+    border-top: solid 6px #ff0000;
+    background-color: #f00;
+    color: #fff;
+    height: 400px;
+}
+
+#menu a {
+    background-color: #f00;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+#menu a:hover {
+    background-color: #f00;
+    color: #ddd;
+    text-decoration:underline;
+    display: block;
+}
+
+#content {
+    background-color: #fff;
+    border-top: solid 6px #f00;
+
+}
+
+#footer {
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    border-radius: 10px;
+    margin_top: 10px;
+    text-align: center;
+    background-color: #DF0C36;
+    color: #fff;
+    padding: 0px;
+    font-size: 10px;
+
+}
+
+/* Navbar container */
+.navbar {
+    width: 80%;
+    overflow: hidden;
+    background-color: #DF0C36;
+    font-family: Arial;
+    padding: 3px;
+}
+
+/* Links inside the navbar */
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+.form-signin .checkbox {
+    font-weight: normal;
+}
+.form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+#container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-height:55vh;
+    overflow-y: scroll;
+    padding-bottom: 55px;
+
+}
+#containerProject {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-height:75vh;
+    overflow-y: scroll;
+    padding-bottom: 55px;
+
+}
+#login{
+    margin-right: 25%;
+    margin-left: 25%;
+    margin-top: 10%;
+    margin-bottom: 40%;
+    float: none;
+    text-align: center;
+    padding-bottom:5%;
+
+}
+
+#imageSize{
+    width:350px;
+    height:150px;
+    position:center;
+    align-content:center;
+}
+
+#viewButton{
+    color: #DF0C36;
+
+}
+
+#editProjectButton{
+    color: #DF0C36;
+
+}
+
+
+#createWellButton{
+    color: white;
+    background-color: #DF0C36;
+
+    margin-left:0.7%;
+}
+
+
+#editStageButton{
+    color: #DF0C36;
+}
+
+#createStageButton{
+    color: white;
+    background-color: #DF0C36;
+
+    margin-left:0.7%;
+
+}
+
+#projectinfo{
+    margin-left:1%;
+    font-weight:bold;
+    margin-bottom:2%;
+}
+
+#KPITitle{
+    margin-left:1%;
+    font-weight:bold;
+
+}
+
+#infoMove{
+    margin-left:1%;
+    font-weight:bold;
+    margin-bottom:3px
+}
+
+#searchText{
+    width:400px;
+    float:left;
+
+    color:black;
+
+}
+
+#editKPIButton{
+    color: #DF0C36;
+
+}
+
+#searchButton{
+    background-color:#DF0C36;
+    color:white;
+    width:80px ;
+    height:32px;
+
+}
+
+#createKPIButton{
+    background-color:#DF0C36;
+    color:white;
+
+}
+
+#kpieditform{
+    margin-right: 44%;
+    margin-left: 44%;
+    margin-top: 1%;
+
+    float: none;
+    text-align: center;
+    align-content: center;
+
+}
+
+#projecteditform{
+    margin-right: 44%;
+    margin-left: 44%;
+    margin-top: 1%;
+
+    float: none;
+    text-align: center;
+    align-content: center;
+
+}
+
+
+
+#editKPIheader{
+    margin-right: 12%;
+    margin-left: 12%;
+    margin-bottom: 5%;
+    margin-top: 4%;
+    float: none;
+    text-align: center;
+    align-content: center;
+}
+
+#editProjectHeader{
+    margin-right: 12%;
+    margin-left: 12%;
+    margin-bottom: 3%;
+    margin-top: 2%;
+    float: none;
+    text-align: center;
+    align-content: center;
+}
+
+#editStageStyle{
+    margin-right: 44%;
+    margin-left: 44%;
+    margin-top: 1%;
+
+    float: none;
+    text-align: center;
+    align-content: center;
+
+}
+
+#editStageHeader{
+    margin-right: 12%;
+    margin-left: 12%;
+    margin-bottom: 10%;
+    margin-top: 2%;
+    float: none;
+    text-align: center;
+    align-content: center;
+}
+
+#createKPIstyle{
+    margin-right: 12%;
+    margin-left: 12%;
+    margin-bottom: 10%;
+    margin-top: 2%;
+    float: none;
+    text-align: center;
+    align-content: center;
+}
+
+#createKPIHeader{
+    margin-right: 12%;
+    margin-left: 12%;
+    margin-bottom: 3%;
+    margin-top: 2%;
+    float: none;
+    text-align: center;
+    align-content: center;
+}
+
+#createWellStyle{
+    margin-right: 12%;
+    margin-left: 12%;
+    margin-bottom: 3%;
+    margin-top: 2%;
+    float: none;
+    text-align: center;
+    align-content: center;
+}
+
+#createWellHeader{
+    margin-right: 12%;
+    margin-left: 12%;
+    margin-bottom: 3%;
+    margin-top: 2%;
+    float: none;
+    text-align: center;
+    align-content: center;
+}
+
+#createStageStyle{
+    margin-right: 12%;
+    margin-left: 12%;
+    margin-bottom: 3%;
+    margin-top: 2%;
+    float: none;
+    text-align: center;
+    align-content: center;
+}
+
+#createStageHeader{
+    margin-right: 12%;
+    margin-left: 12%;
+    margin-bottom: 3%;
+    margin-top: 2%;
+    float: none;
+    text-align: center;
+    align-content: center;
+}
+
+#oilRig{
+    height:740px;
+    width:1530px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-image:url("/images/oilRig.jpg");
+    background-size:cover;
+
+}
+
+#backgroundForForm{
+    background:white;
+    width-:25%;
+    position: center;
+    opacity:90%;
+
+    margin: 0% 25% 0% 25%;
+}
+#totalLogo {
+    position: absolute;
+    right: 100px;
+    display: inline-block;
+    height: 70px;
+    width:15%;
+}
+.container{
+    width: 60%;
+    margin: 15px auto;
+    float: left;
+}
+.pcontainer{
+    width: 20%;
+    margin: 15px auto;
+    float: left;
+}
+.hcontainer{
+    padding-left: 10px;
+}

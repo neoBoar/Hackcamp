@@ -1,0 +1,23 @@
+<?php require('template/headerLogin.phtml') ?>
+<body id="oilRig">
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+    <body role="document">
+    <div id="backgroundForForm">
+    <div id="login">
+        <img src="images/logo.png" alt="logo" id="imageSize" />
+        <p></p>
+        <input type="text" id="email" name="email" placeholder="Email"><br><br><?php if (isset($_POST['email'])) {$_POST['email'];  	} ?>
+        <p></p>
+        <input type="password" id="password" name="password" placeholder="Password"><br><br><?php if (isset($_POST['password'])) {$_POST['password'];  	} ?>
+
+
+
+    <form action="" method="post">
+        <input type="submit" name="loginButton" value="Log In">
+    </form>
+
+    </div>
+    </body>
+</form>
+</body>
+<?php require('template/footer.phtml') ?>

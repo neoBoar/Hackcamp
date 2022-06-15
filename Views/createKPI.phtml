@@ -1,0 +1,59 @@
+<?php require('template/header.phtml') ?>
+<h1 id="createKPIHeader">Please enter your new key performance indicator details below:</h1>
+    <div id="createKPIstyle">
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+    <body>
+    <div>
+
+<label for="wellName">Well Name:</label><label><?php echo $_SESSION['wellName']; ?></label></br>
+        <p></p>
+<label for="casing">Casing:</label><label><?php echo $_SESSION['casing']; ?></label></br>
+        <p></p>
+<label for="serviceProvider">Service Provider:</label><label><?php echo $_SESSION['serviceProvider']; ?></label></br>
+        <p></p>
+<label for="spudDate">Spud Date:</label><label><?php echo $_SESSION['spudDate']; ?></label></br>
+        <p></p>
+<label for="releaseDate">Release Date:</label><label><?php echo $_SESSION['releaseDate']; ?></label></br>
+        <p></p>
+<label for="kpiOption">Category: </label>
+        <p></p>
+<select id="kpiOption" name="kpiOption"><?php if (isset($_POST['kpiOption'])) {$_POST['kpiOption'];} ?>
+    <p></p>
+            <option selected="selected">Select Category:</option>
+            <?php
+            // A sample product array
+            $kpiCategoriesString=$_SESSION["kpiCategories"];
+            $categories = explode(",", $kpiCategoriesString);
+
+            // Iterating through the product array
+            foreach($categories as $item){
+                echo "<option value='$item'>$item</option>";
+            }
+            ?>
+        </select>
+
+    </br>
+        <p></p>
+        <label for="indicators">Indicators: </label>
+        <p></p>
+<input type="text" id="indicators" name="indicators"><?php if (isset($_POST['indicators'])) {$_POST['indicators'];} ?><br>
+        <p></p>
+        <label for="criteria">Criteria: </label>
+        <p></p>
+        <input type="text" id="criteria" name="criteria"><?php if (isset($_POST['criteria'])) {$_POST['criteria'];} ?><br>
+        <p></p>
+        <label for="comment">Comments: </label>
+        <p></p>
+
+        <input type="text" id="comment" name="comment"><?php if (isset($_POST['comment'])) {$_POST['comment'];} ?><br>
+        <p></p>
+        <label for="score">Score: </label>
+        <p></p>
+<input type="text" id="score" name="score"><?php if (isset($_POST['score'])) {$_POST['score'];} ?><br>
+        <p></p>
+<input type="submit" name="createKPI" value="Create KPI">
+    </div>
+    </body>
+</form>
+    </div>
+<?php require('template/footer.phtml') ?>

@@ -1,0 +1,231 @@
+<?php require('template/header.phtml');
+$dashName = $_SESSION['wellSelect'];
+?>
+
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+<div class="hcontainer"><?= "<h3>Dashboard: $dashName</h3>" ?></div>
+<div class="container">
+    <canvas id="myChart" ></canvas></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels:[<?php echo $_SESSION['barLabels']; ?>],
+            datasets: [{
+                label: "",
+                data: [<?php echo $_SESSION['barData']; ?>],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            scales: {yAxes: [{ticks: {beginAtZero: true, suggestedMax: 100}}]},
+            legend: {display: false},
+            title:  {display : true, text: 'Overall Stage Performance'}
+        }
+    });
+</script>
+<div class="pcontainer">
+    <canvas id="30pieChart"></canvas></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+<script>
+    var ctx = document.getElementById("30pieChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: [<?php echo $_SESSION['30pieLabels']; ?>],
+            datasets: [{
+                backgroundColor: [
+                    "#2ecc71",
+                    "#3498db",
+                    "#95a5a6",
+                    "#9b59b6",
+                    "#f1c40f",
+                    "#e74c3c",
+                    "#34495e"
+                ],
+                data: [<?php echo $_SESSION['30pieData']; ?>]
+            }]
+        },
+        options: {
+            title: {
+                <?php if($_SESSION['30pieData'] != null)
+                {
+                    echo 'display: true, text: "30 Inch Casing"';
+                }
+                else
+                {
+                    echo '';
+                } ?>
+                }
+        }
+    });
+</script>
+<div class="pcontainer">
+    <canvas id="20pieChart"></canvas></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+<script>
+    var ctx = document.getElementById("20pieChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: [<?php echo $_SESSION['20pieLabels']; ?>],
+            datasets: [{
+                backgroundColor: [
+                    "#2ecc71",
+                    "#3498db",
+                    "#95a5a6",
+                    "#9b59b6",
+                    "#f1c40f",
+                    "#e74c3c",
+                    "#34495e"
+                ],
+                data: [<?php echo $_SESSION['20pieData']; ?>]
+            }]
+        },
+        options: {
+            title: {
+                <?php if($_SESSION['20pieData'] != null)
+                {
+                    echo 'display: true, text: "20 Inch Casing"';
+                }
+                else
+                {
+                    echo '';
+                } ?>
+            }
+        }
+    });
+</script>
+<div class="pcontainer">
+    <canvas id="14pieChart"></canvas></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+<script>
+    var ctx = document.getElementById("14pieChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: [<?php echo $_SESSION['14pieLabels']; ?>],
+            datasets: [{
+                backgroundColor: [
+                    "#2ecc71",
+                    "#3498db",
+                    "#95a5a6",
+                    "#9b59b6",
+                    "#f1c40f",
+                    "#e74c3c",
+                    "#34495e"
+                ],
+                data: [<?php echo $_SESSION['14pieData']; ?>]
+            }]
+        },
+        options: {
+            title: {
+                <?php if($_SESSION['14pieData'] != null)
+                {
+                    echo 'display: true, text: "14 x 13.375 Inch Casing"';
+                }
+                else
+                {
+                    echo '';
+                } ?>
+            }
+        }
+    });
+</script>
+<div class="pcontainer">
+    <canvas id="9pieChart"></canvas></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+<script>
+    var ctx = document.getElementById("9pieChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: [<?php echo $_SESSION['9pieLabels']; ?>],
+            datasets: [{
+                backgroundColor: [
+                    "#2ecc71",
+                    "#3498db",
+                    "#95a5a6",
+                    "#9b59b6",
+                    "#f1c40f",
+                    "#e74c3c",
+                    "#34495e"
+                ],
+                data: [<?php echo $_SESSION['9pieData']; ?>]
+            }]
+        },
+        options: {
+            title: {
+                <?php if($_SESSION['9pieData'] != null)
+                {
+                    echo 'display: true, text: "9.875 Inch Casing"';
+                }
+                else
+                {
+                    echo '';
+                } ?>
+            }
+        }
+    });
+</script>
+<div class="pcontainer">
+    <canvas id="P&ApieChart"></canvas></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+<script>
+    var ctx = document.getElementById("P&ApieChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: [<?php echo $_SESSION['p&apieLabels']; ?>],
+            datasets: [{
+                backgroundColor: [
+                    "#2ecc71",
+                    "#3498db",
+                    "#95a5a6",
+                    "#9b59b6",
+                    "#f1c40f",
+                    "#e74c3c",
+                    "#34495e"
+                ],
+                data: [<?php echo $_SESSION['p&apieData']; ?>]
+            }]
+        },
+        options: {
+            title: {
+                <?php if($_SESSION['p&apieData'] != null)
+                {
+                    echo 'display: true, text: "P & A"';
+                }
+                else
+                {
+                    echo '';
+                } ?>
+            }
+        }
+    });
+</script>
+</body>
+</html>

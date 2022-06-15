@@ -1,0 +1,46 @@
+<?php require('template/header.phtml') ?>
+<div id="editKPIheader">
+<h1>Please edit your KPI's details below:</h1>
+</div>
+<div id="kpieditform">
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+    <body>
+    <div>
+        <label for="newItem">Item: </label>
+        <p></p>
+        <select id="newItem" name="newItem"><?php if (isset($_POST['newItem'])) {$_POST['newItem'];} ?>
+            <option selected="selected">Select Category:</option>
+            <?php
+            // A sample product array
+            $kpiCategoriesString=$_SESSION["kpiCategories"];
+            $categories = explode(",", $kpiCategoriesString);
+
+            // Iterating through the product array
+            foreach($categories as $item){
+                echo "<option value='$item'>$item</option>";
+            }
+            ?>
+        </select>
+        <p></p>
+        <label for="indicator">Indicator: </label>
+        <p></p>
+        <input type="text"id="indicator" name="indicator"><?php if (isset($_POST['indicator'])) {$_POST['indicator'];} ?><br>
+        <p></p>
+        <label for="criteria">Criteria:</label>
+        <p></p>
+        <input type="text"id="criteria" name="criteria"><?php if (isset($_POST['criteria'])) {$_POST['criteria'];} ?><br>
+        <p></p>
+        <label for="comment">New Comment:</label>
+        <p></p>
+        <input type="text"id="comment" name="comment"><?php if (isset($_POST['comment'])) {$_POST['comment'];} ?><br>
+        <p></p>
+        <label for="score">New Score:</label>
+        <p></p>
+        <input type="number"id="score" name="score"><?php if (isset($_POST['score'])) {$_POST['score'];} ?><br>
+        <p></p>
+        <input type="submit" name="editKPI" value="Edit KPI">
+    </div>
+    </body>
+</form>
+    <div id="kpieditform">
+<?php require('template/footer.phtml') ?>

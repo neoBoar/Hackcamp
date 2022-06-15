@@ -1,0 +1,42 @@
+
+<?php require('template/header.phtml') ?>
+
+<h3>Stages</h3>
+<div>
+
+</div>
+<p></p>
+<div class="row">
+    <div id="container" class="col-xs-12">
+        <?php
+        echo "Well Name:" .  $_SESSION['wellName'];?>
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <br>
+        </form>
+        <div>
+            <form method="post" action="createStage.php"><input type="submit" value="Create Stage" name="createStageButton" id="createStageButton"></form>
+        </div>
+        <table class="table table-hover">
+            <thead>
+            <tr><th>Casing</th><th></tr>
+            <!--  this is all of the title for the auction page  -->
+
+            </thead>
+            <tbody>
+            <!--  this is does a loop getting all auctions  -->
+            <?php foreach ($view->stageDataSet as $stageData) {
+                echo '<tr> <td>' . $stageData->getCasing() .
+                    '</td> <td>' . '<form method="post" action="managerData.php"><input type="submit" value="View"  name="viewButton" id="viewButton"><input type="hidden" name="casing" value="' . $stageData->getCasing(). '"><input type="hidden" name="stageID" value="' . $stageData->getStageID(). '"></form>' .
+                    '</td> <td>' . '<form method="post" action="editStage.php"><input type="submit" value="Edit" name="editStageButton" id="editStageButton"><input type="hidden" name="stageID" value="' . $stageData->getStageID(). '"></form>' . '</td></td></tr>';
+            } ?>
+            </tbody>
+        </table>
+
+        <form method="post">
+            <input type="submit" name="logoutButton" value="Log Out">
+        </form>
+    </div>
+
+
+
+<?php require('template/footer.phtml') ?>

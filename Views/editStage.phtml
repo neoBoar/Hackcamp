@@ -1,0 +1,17 @@
+<?php require('template/header.phtml') ?>
+
+    <h1 id="editStageHeader">Please edit your new stage details below:</h1>
+    <div id="editStageStyle">
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <body>
+        <div>
+            <label for="casing">Casing: </label>
+            <p></p>
+            <input type="text" id="casing" name="casing"><?php if (isset($_POST['casing'])) {$_POST['casing'];} ?><br>
+            <p></p>
+            <input type="submit" name="editStage" value="Edit Stage">
+        </div>
+        </body>
+    </form>
+    </div>
+<?php require('template/footer.phtml') ?>

@@ -1,0 +1,85 @@
+<?php require('template/header.phtml') ?>
+<div id="KPITitle">
+    <h3>KPIs</h3>
+</div>
+
+
+
+
+<p></p>
+<div class="row" >
+    <div  class="col-xs-12">
+        <form method="post" action = "">
+            <div id="infoMove">
+                <input type="search" class="form-control" placeholder="Search" aria-label="Search" name="searchText" id="searchText">
+                <button type="submit"  name="searchButton" id="searchButton">Search</button>
+                <label>(<?php echo $view->itemSearch ?>)</label>
+                <label><?php echo $view->displayScore ?></label>
+                <label><?php echo $view->managerDataSetS ?><?php echo $view->displayPercentage ?></label>
+            </div>
+        </form>
+        <form method="post" action = "">
+            <div id="infoMove">
+                <select name="orderSelect" onchange="this.form.submit();">
+                    <option value="Order By">Order Score By</option>
+                    <option value="Low To High">Low To High</option>
+                    <option value="High To Low">High To Low</option>
+                </select>
+                <input type="hidden" name="orderSelectButton" value="Order" id="searchButton"/>
+            </div>
+        </form>
+        <div id="infoMove">
+            <form method="post" action="createKPI.php"><input type="submit" value="Create KPI" name="createKPIButton" id="createKPIButton"></form>
+        </div>
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post"></form>
+        <br>
+        <div id="projectinfo">
+            <?php
+            echo "Well Name:" .  $_SESSION['wellName'] .'</br>'.
+                'Service Provider:' .$_SESSION['serviceProvider'].'</br>'.
+                'Casing:' .$_SESSION['casing'].'</br>'.
+                'Spud Date:' . $_SESSION['spudDate'].'</br>';
+            $indString="";
+            ?>
+        </div>
+        <div id="container">
+            <table class="table table-hover">
+                <thead>
+                <tr><th>Score Indicator</th><th>Item</th><th>Indicator</th><th>Criteria</th><th>Comments</th><th>Score</th><th>Complete</th><th>Release date</th><th></tr>
+                <!--  this is all of the title for the auction page  -->
+                </thead>
+                <tbody>
+                <!--  this is does a loop getting all auctions  -->
+                <?php foreach ($view->managerDataSet as $managerData) {
+                    $imagePath="images/blank.png";
+                    if ($managerData->getScore()==0 || $managerData->getScore()==1){
+                        $imagePath="images/red.png";
+                    }
+                    else if ($managerData->getScore()==2 || $managerData->getScore()==3){
+                        $imagePath="images/yellow.png";
+                    }
+                    else if ($managerData->getScore()==4 || $managerData->getScore()==5){
+                        $imagePath="images/green.png";
+                    }
+                    ;
+                    echo '<tr> <td>' . "<img src=".$imagePath.">" .
+                        '</td> <td>' . $managerData->getItem() .
+                        '</td> <td>' . $managerData->getIndicators() .
+                        '</td> <td> ' . $managerData->getCriteria() .
+                        '</td> <td>' .  $managerData->getComments() .
+                        '</td> <td>' .  $managerData->getScore() .
+                        '</td> <td>' . $managerData->getComplete() .
+                        '</td> <td>' . $managerData->getReleaseDate() .
+                        '</td> <td>' . '<form method="post" action="editKPI.php"><input type="submit" value="Edit" name="editKPIButton" id="editKPIButton"><input type="hidden" name="kpiID" value="' . $managerData->getID(). '"></form>'.
+                        '</td></td></tr>';
+
+                } ?>
+                </tbody>
+            </table>
+        </div>
+        </form>
+    </div>
+
+
+
+    <?php require('template/footer.phtml') ?>

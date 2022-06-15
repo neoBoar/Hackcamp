@@ -1,0 +1,20 @@
+<?php require('template/header.phtml') ?>
+<h1 id="createStageHeader">Please enter your new stage details below:</h1>
+    <div id="createStageStyle">
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+    <body>
+    <div>
+<label for="casing">Casing: </label>
+        <p></p>
+<input type="text" id="casing" name="casing"><?php if (isset($_POST['casing'])) {$_POST['casing'];} ?><br>
+        <p></p>
+        <label for="wellName">Well Name:</label><label><?php echo $_SESSION['wellName']; ?></label></br>
+        <p></p>
+        <label for="kpiCategory">KPI Categories:</label></label><label><?php echo $_SESSION['kpiCategories']; ?></label></br>
+        <p></p>
+        <input type="submit" name="createStage" value="Create Stage">
+    </div>
+    </body>
+</form>
+    </div>
+<?php require('template/footer.phtml') ?>

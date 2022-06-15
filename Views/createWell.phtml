@@ -1,0 +1,51 @@
+<?php require('template/header.phtml') ?>
+<h1 id="createWellHeader">Please enter your new service project details below:</h1>
+    <div id="createWellStyle">
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+    <body>
+    <div>
+<label for="name">Service Provider: </label>
+        <p></p>
+<input type="text" id="serviceProvider" name="serviceProvider"><?php if (isset($_POST['serviceProvider'])) {$_POST['serviceProvider'];} ?><br>
+        <p></p>
+        <label for="wellName">Well Name: </label>
+        <p></p>
+        <input type="text"id="wellName" name="wellName"><?php if (isset($_POST['wellName'])) {$_POST['wellName'];} ?><br>
+        <p></p>
+        <label for="spudDate">Spud Date:</label>
+        <p></p>
+        <input type="text"id="spudDate" name="spudDate"><?php if (isset($_POST['spudDate'])) {$_POST['spudDate'];} ?><br>
+        <p></p>
+        <label for="releaseDate">Release Date:</label>
+        <p></p>
+        <input type="text"id="releaseDate" name="releaseDate"><?php if (isset($_POST['releaseDate'])) {$_POST['releaseDate'];} ?><br>
+        <p></p>
+        <label for="kpiCategory">KPI Categories (Separate with commas):</label>
+        <p></p>
+        <input type="text"id="kpiCategory" name="kpiCategory"><?php if (isset($_POST['kpiCategory'])) {$_POST['kpiCategory'];} ?><br>
+        <p></p>
+        <label for="assignedName">Engineer Name:</label>
+        <p></p>
+        <select id="assignedName" name="assignedName"><?php if (isset($_POST['assignedName'])) {$_POST['assignedName'];} ?>
+            <option selected="selected">Select Engineer:</option>
+            <?php
+            $names = explode(",", $_SESSION['engineerNames']);
+
+            // Iterating through the product array
+            foreach($names as $item){
+            echo "<option value='$item'>$item</option>";
+            }
+            ?>
+        </select>
+        <!--<input type="text"id="assignedName" name="assignedName"><?php if (isset($_POST['assignedName'])) {$_POST['assignedName'];} ?><br>-->
+        <p></p>
+        <label for="assignedEmail">Engineer Email:</label>
+        <p></p>
+        <input type="text"id="assignedEmail" name="assignedEmail"><?php if (isset($_POST['assignedEmail'])) {$_POST['assignedEmail'];} ?><br>
+        <p></p>
+        <input type="submit" name="createWell" value="Create Project">
+    </div>
+    </body>
+</form>
+    </div>
+<?php require('template/footer.phtml') ?>
