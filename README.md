@@ -1,4 +1,4 @@
-# HackCamp Application (KPI tracker application)
+# HackCamp Application (Key Performance Indicator (KPI) tracking application)
 
 A KPI tracking application built for Total UK for a University Group Work Project
 
